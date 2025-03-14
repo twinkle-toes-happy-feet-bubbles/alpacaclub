@@ -1,0 +1,131 @@
+/* App.css - Cool & Chill Vibe */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Softer, modern font */
+  background-color: #e9ecef; /* Light, airy background */
+  color: #343a40; /* Dark, readable text */
+  line-height: 1.6; /* Improved readability */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Use min-height to allow content overflow */
+  padding: 20px; /* Add some padding around the container */
+}
+
+.chat-box {
+  width: 90%; /* Slightly wider */
+  max-width: 700px; /* Increased max width */
+  background-color: #f8f9fa; /* Lighter chatbox background */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* More subtle shadow */
+  overflow-y: auto;
+  margin-bottom: 30px;
+  padding: 20px; /* Add padding inside the chatbox */
+}
+
+.message {
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 20px; /* More rounded message bubbles */
+  word-break: break-word; /* Prevent long words from breaking layout */
+}
+
+.user {
+  background-color: #a7d9ed; /* Light blue, friendly */
+  color: #343a40; /* Dark text for contrast */
+  align-self: flex-end;
+  border-bottom-right-radius: 5px; /* Slightly different radius for distinction */
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.bot {
+  background-color: #ced4da; /* Light gray, neutral */
+  color: #343a40;
+  align-self: flex-start;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 5px; /* Slightly different radius for distinction */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.input-box {
+  display: flex;
+  width: 90%;
+  max-width: 700px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 10px 0 0 10px; /* More rounded input */
+  font-size: 16px;
+  color: #495057;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #6c757d; /* Muted button color */
+  color: #fff;
+  border-radius: 0 10px 10px 0; /* More rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Add transform for subtle interaction */
+  font-weight: 500; /* Slightly bolder button text */
+}
+
+button:hover {
+  background-color: #5a6268; /* Darker hover */
+  transform: scale(1.02); /* Subtle scale on hover */
+}
+
+input[type="text"],
+button {
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  font-style: italic; /* Add a touch of subtlety to the placeholder */
+}
+
+/* Optional: Alpaca Vibe Color Palette (Feel free to uncomment and adjust) */
+
+:root {
+  --alpaca-sand: #f0e68c;
+  --alpaca-taupe: #d3b569;
+  --alpaca-cream: #fffaf0;
+  --alpaca-brown: #e2885f;
+}
+
+body {
+  background-color: var(--alpaca-cream);
+}
+
+.chat-box {
+  background-color: white;
+}
+
+.user {
+  background-color: var(--alpaca-sand);
+  color: var(--alpaca-brown);
+}
+
+.bot {
+  background-color: var(--alpaca-taupe);
+  color: var(--alpaca-cream);
+}
+
+button {
+  background-color: var(--alpaca-brown);
+}
+
+button:hover {
+  background-color: darken(var(--alpaca-brown), 10%);
+}
