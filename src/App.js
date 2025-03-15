@@ -1,7 +1,6 @@
 import React, { useState, useEffect,useRef  } from 'react';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
-import { HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 function Chatbot() {
