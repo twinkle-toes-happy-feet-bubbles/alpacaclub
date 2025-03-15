@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef  } from 'react';
+import React, { useState, useEffect,useRef, useMemo  } from 'react';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
@@ -23,7 +23,7 @@ function Chatbot() {
     maxOutputTokens: 400, // Adjusted for chatbot context
   };
 
-  const initialChatHistory = [
+  const initialChatHistory = useMemo(() => [
     {
       role: "user",
       parts: [
@@ -120,13 +120,13 @@ function Chatbot() {
         {text: "Well now, that's a mighty fine question! There are a whole herd of reasons why Alpaca Club stands out from the crowd. Here's what makes us special:\n\n*   **The Homie Philosophy:** We treat every customer like family. From personalized recommendations to friendly service, we're all about building a supportive and respectful community of cannabis enthusiasts.\n*   **Quality is King (and Queen!):** We're meticulous about curating the finest cannabis products, with rigorous testing for purity, potency, and safety. We partner with trusted growers and suppliers to maintain the highest standards.\n*   **Convenience is Our Middle Name:** We make accessing premium cannabis easy and hassle-free. With delivery services spanning across the Sacramento area, we bring the dispensary right to your doorstep. Plus, we've got extended operating hours to fit your schedule.\n*   **A Wide Range of Products:** From flower to concentrates to edibles and more, we've got something for everyone, whether you're a seasoned connoisseur or new to the cannabis scene.\n*   **We're Part of the Community:** We're more than just a delivery service; we're active in the local cannabis scene, supporting events, artists, and those in need through our compassion program.\n*   **We Keep it Safe and Legal:** We strictly adhere to California's cannabis regulations, with thorough age verification and secure, discreet transactions.\n\nIn short, Alpaca Club is all about providing a high-quality, convenient, and community-focused cannabis experience. We're not just deliverin' weed; we're delivering good vibes and a commitment to makin' your cannabis journey the best it can be!\n"},
       ],
     },
-  ];
+  ], []); // Empty dependency array means it's only created once
 
   useEffect(() => {
     if (messages.length === 0) {
       setMessages(initialChatHistory);
     }
-  }, [messages]);
+  }, [messages, initialChatHistory]);
 
   useEffect(() => {
     // Scroll to the bottom of the chat box whenever messages update
