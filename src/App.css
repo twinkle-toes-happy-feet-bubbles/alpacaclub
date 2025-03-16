@@ -1,4 +1,8 @@
 /* App.css - Cool & Chill Vibe */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
   margin: 0;
